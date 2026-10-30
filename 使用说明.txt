@@ -1,0 +1,13 @@
+Wuyuan Gao 作品集（静态 HTML 版）
+
+2026-10-11 更新后，这个文件夹是作品集的正式版本，发布到公开网址时用的就是这里的文件。
+
+打开方法：
+1. 双击 index.html。
+2. 首页、四个项目页、图片放大和 PDF 下载均可在本机浏览。
+3. 请保留整个文件夹结构，不要只单独移动 index.html。
+
+说明：
+- 上一级的源项目（app、public 等）已同步了同样的文字和图片改动，但没有重新构建过；以后要改内容，直接改这个文件夹里的 HTML。
+- PDF 由 work\generate_portfolio_pdf.py 生成，字体在 work\fonts。
+- assets 里旧的 sw-final-claim.png、sw-prototype-2-detail.png、sw-final-hero.png、ritual-live.png 已不再被页面引用。
