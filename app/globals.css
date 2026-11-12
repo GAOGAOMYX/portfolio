@@ -341,3 +341,18 @@ img { display: block; max-width: 100%; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+/* 2026-11-11: Visual work nav item and page */
+.home-intro p a { color: inherit; text-underline-offset: 0.18em; }
+.media-card .image-zoom-trigger--natural img { display: block; }
+@media (max-width: 760px) {
+  .site-nav a:nth-child(2), .site-nav a:nth-child(3) { display: inline-flex; }
+  .site-nav .nav-about, .site-nav .nav-contact { display: none; }
+  .site-nav a, .wordmark span { white-space: nowrap; }
+}
+@media (max-width: 420px) {
+  .wordmark span { font-size: 1.1rem; }
+  .site-nav { gap: 0.6rem; font-size: 0.78rem; }
+  .site-nav .nav-download { padding-inline: 0.6rem; }
+}
+@media (max-width: 900px) { .media-grid[style] { grid-template-columns: 1fr !important; } }
