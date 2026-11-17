@@ -179,3 +179,24 @@
   window.addEventListener("resize", update);
   update();
 })();
+
+/* Responsibility comparison: view switch and change highlight. */
+(() => {
+  document.querySelectorAll("[data-resp]").forEach((root) => {
+    const views = [...root.querySelectorAll("[data-resp-view]")];
+    views.forEach((button) => {
+      button.addEventListener("click", () => {
+        root.dataset.view = button.dataset.respView;
+        views.forEach((b) => b.setAttribute("aria-pressed", String(b === button)));
+      });
+    });
+    const toggle = root.querySelector("[data-resp-changes]");
+    if (toggle) {
+      toggle.addEventListener("click", () => {
+        const on = root.dataset.changes !== "on";
+        root.dataset.changes = on ? "on" : "off";
+        toggle.setAttribute("aria-pressed", String(on));
+      });
+    }
+  });
+})();
