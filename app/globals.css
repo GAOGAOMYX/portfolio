@@ -637,3 +637,20 @@ img { display: block; max-width: 100%; }
   .ins2-opp { margin-top: 0.5rem; }
   .ins2 details { grid-column: 2; }
 }
+
+/* 2026-11-17: iteration rows — short heading beside the real before/after screens */
+.iterx { display: grid; gap: 0; margin: 1.25rem 0 0; padding: 0; list-style: none; border-top: 2px solid var(--ink); }
+.iterx-row { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr); gap: 2rem; align-items: start; padding: 1.5rem 0; }
+.iterx-row + .iterx-row { border-top: 1px solid var(--rule); }
+.iterx-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: start; }
+.iterx-head .ins2-n { font-size: clamp(2.2rem, 3.4vw, 3rem); }
+.iterx-head strong { display: block; margin-top: 0.35rem; font-size: 1.2rem; font-weight: 700; line-height: 1.25; }
+.iterx-head p { margin: 0.5rem 0 0; color: #333; font-size: 0.98rem; line-height: 1.5; }
+.iterx-shots { display: grid; gap: 1rem; }
+.iterx-row--pair .iterx-shots { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr); align-items: end; }
+.media-card .image-zoom-trigger.iterx-shot { display: block; padding: 0; border: 1px solid var(--rule); background: #fff; cursor: zoom-in; }
+.media-card .image-zoom-trigger.iterx-shot img { display: block; width: 100%; height: auto; background: #fff; }
+@media (max-width: 900px) {
+  .iterx-row { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .iterx-row--pair .iterx-shots { grid-template-columns: minmax(0, 1fr); }
+}
