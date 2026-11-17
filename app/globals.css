@@ -356,3 +356,24 @@ img { display: block; max-width: 100%; }
   .site-nav .nav-download { padding-inline: 0.6rem; }
 }
 @media (max-width: 900px) { .media-grid[style] { grid-template-columns: 1fr !important; } }
+
+/* 2026-11-17: follow-along section progress on case studies */
+.case-progress { position: fixed; z-index: 25; left: 0; right: 0; top: var(--progress-top, 78px); background: #f3efe5; border-bottom: 1px solid var(--rule); opacity: 0; transform: translateY(-8px); pointer-events: none; transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out); }
+.case-progress.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.case-progress__inner { width: min(1320px, calc(100% - 96px)); margin-inline: auto; display: flex; gap: 2rem; }
+.case-progress a { display: flex; align-items: baseline; gap: 0.55rem; min-height: 44px; padding-block: 0.8rem; color: var(--muted); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: color 160ms ease; }
+.case-progress__n { font-variant-numeric: tabular-nums; }
+.case-progress a.is-active { color: var(--ink); }
+.case-progress a.is-active .case-progress__n { color: var(--project-accent, var(--green)); }
+@media (hover: hover) and (pointer: fine) { .case-progress a:hover { color: var(--ink); } }
+.case-progress__fill { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--project-accent, var(--green)); transform: scaleX(0); transform-origin: left center; }
+.has-case-progress .case-section { scroll-margin-top: 150px; }
+@media (max-width: 900px) {
+  .case-progress__inner { width: min(100% - 40px, 1320px); gap: 1.25rem; }
+}
+@media (max-width: 640px) {
+  .case-progress__inner { gap: 1.1rem; }
+  .case-progress a:not(.is-active) .case-progress__l { display: none; }
+  .case-progress a.is-active .case-progress__l { overflow: hidden; text-overflow: ellipsis; max-width: 52vw; }
+  .has-case-progress .case-section { scroll-margin-top: 130px; }
+}
