@@ -682,3 +682,38 @@ img { display: block; max-width: 100%; }
 @media (max-width: 900px) {
   .ftest2, .ftest2-opps { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* 2026-11-17: Myco-Care figures */
+.ins2--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ins2--3 .ins2-item { grid-row: span 3; }
+.ins2--3 .ins2-opp { margin-bottom: 0.25rem; font-size: 1.05rem; }
+.mapx { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 2rem; align-items: center; margin-top: 1.25rem; padding-top: 1.5rem; border-top: 2px solid var(--ink); }
+.mapx-key { display: grid; gap: 1.1rem; margin: 0; }
+.mapx-key dt { display: flex; align-items: center; gap: 0.6rem; font-size: 1.05rem; font-weight: 700; }
+.mapx-key dd { margin: 0.2rem 0 0 2.6rem; color: #333; font-size: 0.95rem; line-height: 1.5; }
+.mapx-l { display: inline-block; flex: none; width: 2rem; height: 0; border-top: 3px solid var(--ink); }
+.mapx-l--dot { border-top: 3px dotted #d9534f; }
+.mapx-l--green { border-top-color: #8fd47f; }
+.mapx-l--amber { border-top-color: #f0b34a; }
+.cyc { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; margin: 1.5rem 0 1rem; padding: 0; list-style: none; }
+.cyc li { position: relative; display: grid; gap: 0.35rem; align-content: start; padding: 0 1rem 0 0; }
+.cyc li::before { position: absolute; top: 1.05rem; left: 2.1rem; right: 0; height: 2px; background: var(--ink); content: ""; }
+.cyc li:last-child::before { background: repeating-linear-gradient(90deg, var(--ink) 0 6px, transparent 6px 12px); }
+.cyc .fig-num { position: relative; margin-bottom: 0.5rem; }
+.cyc strong { font-size: 1.05rem; line-height: 1.3; }
+.cyc li > span:not(.fig-num) { color: #5f6661; font-size: 0.88rem; }
+.cyc-p { margin: 0.25rem 0 0; color: #333; }
+.acts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem 1.25rem; margin: 1.25rem 0 0; padding: 1.5rem 0 0; border-top: 2px solid var(--ink); list-style: none; }
+.act p { margin: 0.7rem 0 0; color: #333; font-size: 0.9rem; line-height: 1.5; }
+.act-n { display: inline-grid; place-items: center; width: 1.4rem; height: 1.4rem; margin-right: 0.45rem; border-radius: 50%; background: var(--ink); color: #fff; font-size: 0.72rem; font-weight: 700; vertical-align: 1px; }
+@media (max-width: 900px) {
+  .ins2--3, .mapx { grid-template-columns: minmax(0, 1fr); }
+  .ins2--3 .ins2-item { padding-left: 0; border-left: 0; }
+  .ins2--3 .ins2-item + .ins2-item { border-top: 1px solid var(--rule); }
+  .cyc { grid-template-columns: minmax(0, 1fr); gap: 0.9rem; }
+  .cyc li { grid-template-columns: auto minmax(0, 1fr); column-gap: 0.75rem; align-items: center; padding: 0; }
+  .cyc li::before { display: none; }
+  .cyc .fig-num { grid-row: span 2; margin: 0; }
+  .acts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) { .acts { grid-template-columns: minmax(0, 1fr); } }
