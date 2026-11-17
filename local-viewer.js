@@ -200,3 +200,19 @@
     }
   });
 })();
+
+(function () {
+  document.querySelectorAll("[data-iter]").forEach(function (root) {
+    var items = root.querySelectorAll("[data-f]");
+    function set(f) {
+      if (f) root.dataset.linked = f; else delete root.dataset.linked;
+      items.forEach(function (el) { el.classList.toggle("is-linked", !!f && el.dataset.f === f); });
+    }
+    items.forEach(function (el) {
+      el.addEventListener("mouseenter", function () { set(el.dataset.f); });
+      el.addEventListener("mouseleave", function () { set(null); });
+      el.addEventListener("focus", function () { set(el.dataset.f); });
+      el.addEventListener("blur", function () { set(null); });
+    });
+  });
+})();
