@@ -750,3 +750,34 @@ img { display: block; max-width: 100%; }
   .loop li + li::before { top: -1.4rem; left: 1.5rem; width: 2px; height: 1rem; }
   .loop li + li::after { top: -0.85rem; left: calc(1.5rem - 3px); transform: rotate(135deg); }
 }
+
+/* 2026-11-19: fieldwork evidence (street census sample + field tools) */
+.field-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0 0 1.5rem; padding: 0; list-style: none; border-top: 2px solid var(--ink); }
+.field-nums li { padding: 1rem 1rem 0 0; }
+.field-nums li + li { padding-left: 1.25rem; border-left: 1px solid var(--rule); }
+.field-nums b { display: block; font-family: var(--font-display, var(--font-body)); font-size: clamp(2.6rem, 5vw, 4.25rem); font-weight: 500; line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.field-nums span { display: block; margin-top: 0.4rem; color: #4a4a4a; font-size: 0.95rem; line-height: 1.4; }
+.field-cap { max-width: 78ch; margin: 0.75rem 0 0; color: #4a4a4a; font-size: 0.9rem; line-height: 1.5; }
+.field-tools { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 2rem; align-items: start; margin-top: 2rem; }
+.paper { position: relative; margin-top: 0.75rem; padding: 1.4rem 1.5rem; border: 1px dashed #9a9a94; background: #fff; color: #111; font-family: Arial, Helvetica, sans-serif; box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 10px 24px -18px rgba(0,0,0,0.35); }
+.paper--note { border-style: solid; border-color: #c9c7bf; }
+.paper p { margin: 0; }
+.paper-small { font-size: 0.85rem; }
+.paper-q { max-width: 16ch; margin: 1.1rem 0 1.4rem !important; font-size: clamp(1.25rem, 2vw, 1.6rem); font-weight: 700; line-height: 1.25; }
+.paper-q--sm { max-width: none; margin: 0.9rem 0 !important; font-size: 0.98rem; }
+.paper-rule { max-width: 70%; padding-top: 0.8rem; border-top: 2px solid #111; }
+.paper-by { margin-top: 1.6rem !important; color: #666; font-size: 0.8rem; }
+.paper-qr { position: absolute; top: 3.4rem; right: 1.5rem; display: grid; place-items: center; width: 5rem; height: 5rem; border: 2px solid #111; color: #777; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; background: repeating-linear-gradient(45deg, #f1f1ee 0 6px, #fff 6px 12px); }
+.paper-h { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.paper-line { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.5rem 0.9rem; margin-top: 0.85rem !important; font-size: 0.82rem; }
+.paper-line i { flex: 1 1 4rem; min-width: 3rem; border-bottom: 1px solid #b5b5b0; height: 1rem; }
+.paper-line em { display: inline-flex; align-items: center; gap: 0.35rem; font-style: normal; }
+.paper-line em::before { width: 0.85rem; height: 0.85rem; border: 1px solid #9a9a94; content: ""; }
+.paper-foot { margin-top: 1.4rem !important; color: #666; font-size: 0.72rem; font-style: italic; }
+@media (max-width: 900px) {
+  .field-tools { grid-template-columns: minmax(0, 1fr); }
+  .field-nums li { padding-right: 0.5rem; }
+  .field-nums li + li { padding-left: 0.75rem; }
+  .paper-qr { width: 3.75rem; height: 3.75rem; }
+  .paper-q { max-width: 12ch; }
+}
