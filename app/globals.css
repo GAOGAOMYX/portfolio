@@ -781,3 +781,12 @@ img { display: block; max-width: 100%; }
   .paper-qr { width: 3.75rem; height: 3.75rem; }
   .paper-q { max-width: 12ch; }
 }
+
+/* 2026-11-19: service blueprint viewer */
+.bp-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem; margin-bottom: 1rem; }
+.bp-bar p { margin: 0; color: #5f6661; font-size: 0.85rem; }
+.bp[data-view="owner"] [data-bp-panel="service"], .bp[data-view="service"] [data-bp-panel="owner"] { display: none !important; }
+.bp-points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+.bp-points li { padding-top: 0.75rem; border-top: 2px solid var(--ink); color: #333; font-size: 0.95rem; line-height: 1.5; }
+.bp-points b { display: block; margin-bottom: 0.25rem; color: #5f6661; font-size: 0.7rem; letter-spacing: 0.09em; text-transform: uppercase; }
+@media (max-width: 900px) { .bp-points { grid-template-columns: minmax(0, 1fr); } }
