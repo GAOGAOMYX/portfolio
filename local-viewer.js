@@ -228,3 +228,15 @@
     });
   });
 })();
+
+(function () {
+  document.querySelectorAll("[data-bpx]").forEach(function (root) {
+    var buttons = root.querySelectorAll("[data-bpx-view]");
+    buttons.forEach(function (b) {
+      b.addEventListener("click", function () {
+        root.dataset.view = b.dataset.bpxView;
+        buttons.forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      });
+    });
+  });
+})();
